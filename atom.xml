@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yanxin.me/"/>
-  <updated>2018-09-22T06:45:24.186Z</updated>
+  <updated>2018-10-01T18:43:21.707Z</updated>
   <id>https://yanxin.me/</id>
   
   <author>
@@ -17,25 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>page</title>
-    <link href="https://yanxin.me/mixed/page/"/>
-    <id>https://yanxin.me/mixed/page/</id>
-    <published>2018-09-22T06:45:24.000Z</published>
-    <updated>2018-09-22T06:45:24.186Z</updated>
+    <title>Begin</title>
+    <link href="https://yanxin.me/%E9%9A%8F%E7%AC%94/begin/"/>
+    <id>https://yanxin.me/随笔/begin/</id>
+    <published>2018-10-01T15:36:15.000Z</published>
+    <updated>2018-10-01T18:43:21.707Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>其实这个Hexo框架的个人博客我在17年1月的时候就已经搭建好挂在Github Pages上了，当时的域名还是 <code>yanx0202.github.io</code> ，仍旧记得我当时是通了个宵才把这个博客搭建好的，通宵的原因只是我当时找了个错误的教程来操作（真的好气），实际搭建过程如果熟练的话最多5分钟就搞定了，之后我立马就把这个博客完全忘掉了。</p><p>半个月前，无意中了解到同事Miaia正在使用Hexo搭建个人博客，并且他博客的内容就是针对如何搭建并优化Hexo个人博客。这突然就让我想起:我其实也有一个想好好写点文章的博客，但一直都没去更新它，那个时候还是大三现在都已经毕业三个月了，感叹时间过得很快的同时也希望能重新把这个博客捡回来。回去就立马把 <code>yanxin.me</code> 这个域名买了下来，（想众筹买 yan.xin <em><a href="https://wanwang.aliyun.com/domain/searchresult#/?keyword=yan&amp;suffix=xin" target="_blank" rel="noopener">了解价格</a></em> ）并且开始抽时间对我原来的博客进行一些优化。</p><h1 id="我的博客"><a href="#我的博客" class="headerlink" title="我的博客"></a>我的博客</h1><p>我对写这个博客的想法比较简单，能坚持写下去，不管是写一些读书笔记也好、网上烂大街同质的教程也好，能保持一个持续的输出那就达到基本目标了。其次我也不希望我的博客都是从别人那边复制粘贴过来，然后在文章的末尾加上一句转自xxxx就完事了的那种，所以在学习别人文章的基础上希望能尽量加上自己的一些想法，亦或者是针对他人文章中某个点进行更深入的探索等。当然理想是美好的，但是这种事没点技术积累也不是那么容易就能写的出来的，所以在初始阶段还是以把别人的文章通过自己的话转述出来为目标，保持一个写博客的习惯，达到这样的程度那我就算比较满意了。</p><h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><p>最后还是要特别感谢Miaia同学的教程让我把博客优化了好几个档次，什么国内外站点独立部署、Google和百度的SEO搜索优化、评论系统、打赏系统 都是在他的帮助下才完成的。想要搭建博客的同学可以去他的博客地址学习：<a href="https://11.tt" target="_blank" rel="noopener">Miaia</a></p><h1 id="Begin"><a href="#Begin" class="headerlink" title="Begin"></a>Begin</h1><p>那就从祖国母亲生日这天开始吧。</p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;其实这个Hexo框架的个人博客我在17年1月的时候就已经搭建好挂在Github Pages上了，当时的域名还是 &lt;code&gt;yanx0202
+      
+    
     </summary>
     
+      <category term="随笔" scheme="https://yanxin.me/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="myblog" scheme="https://yanxin.me/tags/myblog/"/>
     
   </entry>
   
   <entry>
     <title>Yanx First Article</title>
-    <link href="https://yanxin.me/mixed/Yanx-First-Article/"/>
-    <id>https://yanxin.me/mixed/Yanx-First-Article/</id>
+    <link href="https://yanxin.me/%E9%9A%8F%E7%AC%94/Yanx-First-Article/"/>
+    <id>https://yanxin.me/随笔/Yanx-First-Article/</id>
     <published>2017-01-03T02:32:15.000Z</published>
-    <updated>2018-09-23T09:44:59.197Z</updated>
+    <updated>2018-10-01T18:39:12.485Z</updated>
     
     <content type="html"><![CDATA[<p>哈哈哈哈 终于把博客建起来了！</p>]]></content>
     
@@ -48,6 +59,8 @@
       
     
     </summary>
+    
+      <category term="随笔" scheme="https://yanxin.me/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
       <category term="myblog" scheme="https://yanxin.me/tags/myblog/"/>
