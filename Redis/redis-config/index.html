@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="哈哈哈哈 终于把博客建起来了！">
-<meta name="keywords" content="myblog">
+  <meta name="description" content="前言安装后需要设置的配置bind                绑定 网卡 地址bind 绑定的是网卡地址，如果一个电脑有两个网卡，且redis只绑定了一个，那么就有几率访问不到redisport                端口daemonize           是否守护线程运行protected-mode      开启保护模式这个配置会在没有bind IP以及没有设置密码的时候，默认只">
+<meta name="keywords" content="redis,redis配置文件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Yanx First Article">
-<meta property="og:url" content="https://yanxin.me/随笔/Yanx-First-Article/index.html">
+<meta property="og:title" content="Redis系列(一)：Redis配置">
+<meta property="og:url" content="https://yanxin.me/Redis/redis-config/index.html">
 <meta property="og:site_name" content="Yanx">
-<meta property="og:description" content="哈哈哈哈 终于把博客建起来了！">
+<meta property="og:description" content="前言安装后需要设置的配置bind                绑定 网卡 地址bind 绑定的是网卡地址，如果一个电脑有两个网卡，且redis只绑定了一个，那么就有几率访问不到redisport                端口daemonize           是否守护线程运行protected-mode      开启保护模式这个配置会在没有bind IP以及没有设置密码的时候，默认只">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-01T18:39:12.485Z">
+<meta property="og:updated_time" content="2019-06-29T11:12:49.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yanx First Article">
-<meta name="twitter:description" content="哈哈哈哈 终于把博客建起来了！">
+<meta name="twitter:title" content="Redis系列(一)：Redis配置">
+<meta name="twitter:description" content="前言安装后需要设置的配置bind                绑定 网卡 地址bind 绑定的是网卡地址，如果一个电脑有两个网卡，且redis只绑定了一个，那么就有几率访问不到redisport                端口daemonize           是否守护线程运行protected-mode      开启保护模式这个配置会在没有bind IP以及没有设置密码的时候，默认只">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://yanxin.me/随笔/Yanx-First-Article/"/>
+  <link rel="canonical" href="https://yanxin.me/Redis/redis-config/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>Yanx First Article | Yanx</title>
+  <title>Redis系列(一)：Redis配置 | Yanx</title>
   
 
 
@@ -342,7 +342,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yanxin.me/随笔/Yanx-First-Article/">
+    <link itemprop="mainEntityOfPage" href="https://yanxin.me/Redis/redis-config/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yanx">
@@ -359,7 +359,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Yanx First Article
+          <h2 class="post-title" itemprop="name headline">Redis系列(一)：Redis配置
               
             
           </h2>
@@ -384,7 +384,7 @@
                 
               
 
-              <time title="创建时间：2017-01-03 10:32:15" itemprop="dateCreated datePublished" datetime="2017-01-03T10:32:15+08:00">2017-01-03</time>
+              <time title="创建时间：2018-10-20 23:14:41" itemprop="dateCreated datePublished" datetime="2018-10-20T23:14:41+08:00">2018-10-20</time>
             
 
             
@@ -402,7 +402,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a></span>
 
                 
                 
@@ -417,8 +417,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/随笔/Yanx-First-Article/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/随笔/Yanx-First-Article/" itemprop="commentCount"></span>
+                <a href="/Redis/redis-config/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/Redis/redis-config/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -448,7 +448,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">16</span>
+                <span title="本文字数">2.2k</span>
               
 
               
@@ -472,7 +472,18 @@
       
 
       
-        <p>哈哈哈哈 终于把博客建起来了！</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="安装后需要设置的配置"><a href="#安装后需要设置的配置" class="headerlink" title="安装后需要设置的配置"></a>安装后需要设置的配置</h1><p>bind                绑定 网卡 地址<br>bind 绑定的是网卡地址，如果一个电脑有两个网卡，且redis只绑定了一个，那么就有几率访问不到redis<br>port                端口<br>daemonize           是否守护线程运行<br>protected-mode      开启保护模式<br>这个配置会在没有bind IP以及没有设置密码的时候，默认只能通过127.0.0.1 本机访问redis，禁止公网访问</p>
+<h1 id="内存相关"><a href="#内存相关" class="headerlink" title="内存相关"></a>内存相关</h1><p>maxmemory           最大内存容量，默认为0（不限制），达到该容量则只允许读不允许写<br>maxmemory-policy    当内存不够时删除键的策略<br>volatile-lru        以lru算法删除设置过过期时间的key<br>allkeys-lru                以lru算法删除设置过过期时间的key<br>volatile-random<br>allkeys-random<br>volatile-ttl<br>noeviction（默认）   不删除<br>以上策略可以总结下：<br>volatile和allkeys是删除的范围<br>volatile是针对设置过过期时间的key，适用于redis中有部分key不允许删除的场景（也就是不设置过期时间的key）。<br>allkeys就是所有key，适用于redis中所有的数据都可任意删除的场景。<br>后边的单词是删除算法：<br>lru则是lru算法删除，适用于不同key的访问热度相差较大的场景<br>random是随机删除，适用于不同key之间访问的热度相似的场景<br>ttl是删除快过期的数据，适合所有key都设有过期时间的场景</p>
+<p>maxmemory-samples   采样的LRU个数<br>因为redis 的主动扫描LRU算法，不会每次都扫描全部，而是只扫描一部分key，当着这部分key超过多少比例达到过期时间，他就会把所用key都扫描一遍来清空过期键</p>
+<h1 id="备份相关配置"><a href="#备份相关配置" class="headerlink" title="备份相关配置"></a>备份相关配置</h1><p>appendonly          开启AOF备份，默认为关闭<br>appendfsync         AOF同步的频率，默认为everysec也可以选择always每条命令都同步<br>auto-aof-rewrite-min-size      触发rewrite的AOF文件最小阈值，rewrite是对AOF文件的重写，防止AOF文件过大<br>auto-aof-rewrite-percentage    触发rewrite的AOF文件的增长比例</p>
+<p>save                RDB保存条件<br>默认配置：<br>save 900 1<br>save 300 10<br>save 60 10000<br>也就是分时间段，从时间最短的开始，60秒内如果有10000次更新数据操作就执行一次save备份，如果300秒内有10次更新数据操作就save，同理900秒有一次更新</p>
+<p>rdbcompression  RDB文件是否压缩（默认启用采用LZF算法压缩）<br>rdb文件是以二进制格式来保存。可以采用一定的压缩算法来极大减少磁盘的占用，但是相对的执行压缩算法以及解压缩会增加cpu压力</p>
+<h1 id="数据结构配置"><a href="#数据结构配置" class="headerlink" title="数据结构配置"></a>数据结构配置</h1><p>这些配置都是对redis中不同数据类型在不同数据量下的自动向上转变数据格式的配置，转变的目的一般都是牺牲性能来换取内存空间。<br>hash-max-ziplist-entries<br>hash-max-ziplist-value<br>list-max-ziplist-entries<br>list-max-ziplist-value<br>set-max-intset-entries<br>zset-max-ziplist-entries<br>zset-max-ziplist-value<br>hll-sqarse-max-bytes</p>
+<h1 id="复制相关"><a href="#复制相关" class="headerlink" title="复制相关"></a>复制相关</h1><p>slaveof                 指定当前节点复制哪个主节点<br>repl-ping-slave-period  主节点定期向从节点发送ping命令的周期，用来判断从节点是否存活<br>repl-timeout            主从结点复制超时<br>repl-backlog-size       复制积压缓存区大小，该区域主要是用来处理主从增量复制的，超时后会把新的数据写入这个区域内，直到从节点重新恢复连接，就会把这个缓冲区的数据写到从节点中。但是如果恢复连接后，从节点的offset不在这个缓冲区中，也就是断线这段时间主节点新增了太多数据超出了缓冲区的范围，那么就会触发全量复制，这个一定要避免，不然会对redis性能造成影响</p>
+<p>slave-read-only         从节点是否开启只读，也就是主从结构的读写分离。但这个架构会使得系统架构变得异常复杂，主要出现在某个从节点坏掉上，不能自动故障转移等等</p>
+<h1 id="客户端相关配置"><a href="#客户端相关配置" class="headerlink" title="客户端相关配置"></a>客户端相关配置</h1><p>maxclients              最大客户端连接数<br>这个是一般数据库都会配置来限制过多的客户端连接，简单来说数据库维护这些链接需要一定内存等资源的开销，所以不可能无限制的给你连接<br>timeout                 客户端超时时间，设置理由主要是很多客户端用完数据库后不会主动释放链接，那只能通过数据库来给你超时断掉。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以上都是redis主要功能的配置文件，理解redis的运行机制，再来看这些配置，你会发现这些配置每一个都设置的比较合理，也能进一步理解redis。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>redis 开发与运维</p>
 
       
     </div>
@@ -522,7 +533,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/myblog/" rel="tag"><i class="fa fa-tag"></i> myblog</a>
+            <a href="/tags/redis/" rel="tag"><i class="fa fa-tag"></i> redis</a>
+          
+            <a href="/tags/redis配置文件/" rel="tag"><i class="fa fa-tag"></i> redis配置文件</a>
           
         </div>
       
@@ -535,8 +548,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/mixed/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/Redis/redis-version/" rel="next" title="Redis系列(一)：Redis版本">
+                <i class="fa fa-chevron-left"></i> Redis系列(一)：Redis版本
               </a>
             
           </div>
@@ -545,8 +558,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/随笔/begin/" rel="prev" title="Begin">
-                Begin <i class="fa fa-chevron-right"></i>
+              <a href="/Redis/redis-use-case/" rel="prev" title="Redis系列(一)：Redis使用场景">
+                Redis系列(一)：Redis使用场景 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -595,8 +608,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -724,6 +746,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装后需要设置的配置"><span class="nav-number">2.</span> <span class="nav-text">安装后需要设置的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存相关"><span class="nav-number">3.</span> <span class="nav-text">内存相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#备份相关配置"><span class="nav-number">4.</span> <span class="nav-text">备份相关配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构配置"><span class="nav-number">5.</span> <span class="nav-text">数据结构配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复制相关"><span class="nav-number">6.</span> <span class="nav-text">复制相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#客户端相关配置"><span class="nav-number">7.</span> <span class="nav-text">客户端相关配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">9.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

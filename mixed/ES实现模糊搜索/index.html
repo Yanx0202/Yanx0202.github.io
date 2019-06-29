@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="哈哈哈哈 终于把博客建起来了！">
-<meta name="keywords" content="myblog">
+  <meta name="description" content="前言缺点磁盘空间暴增 总结">
+<meta name="keywords" content="elasticsearch,ngram,ES模糊搜索">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Yanx First Article">
-<meta property="og:url" content="https://yanxin.me/随笔/Yanx-First-Article/index.html">
+<meta property="og:title" content="ES实现模糊搜索">
+<meta property="og:url" content="https://yanxin.me/mixed/ES实现模糊搜索/index.html">
 <meta property="og:site_name" content="Yanx">
-<meta property="og:description" content="哈哈哈哈 终于把博客建起来了！">
+<meta property="og:description" content="前言缺点磁盘空间暴增 总结">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-01T18:39:12.485Z">
+<meta property="og:updated_time" content="2019-06-29T11:13:15.728Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yanx First Article">
-<meta name="twitter:description" content="哈哈哈哈 终于把博客建起来了！">
+<meta name="twitter:title" content="ES实现模糊搜索">
+<meta name="twitter:description" content="前言缺点磁盘空间暴增 总结">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://yanxin.me/随笔/Yanx-First-Article/"/>
+  <link rel="canonical" href="https://yanxin.me/mixed/ES实现模糊搜索/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>Yanx First Article | Yanx</title>
+  <title>ES实现模糊搜索 | Yanx</title>
   
 
 
@@ -342,7 +342,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yanxin.me/随笔/Yanx-First-Article/">
+    <link itemprop="mainEntityOfPage" href="https://yanxin.me/mixed/ES实现模糊搜索/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yanx">
@@ -359,7 +359,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Yanx First Article
+          <h2 class="post-title" itemprop="name headline">ES实现模糊搜索
               
             
           </h2>
@@ -384,30 +384,12 @@
                 
               
 
-              <time title="创建时间：2017-01-03 10:32:15" itemprop="dateCreated datePublished" datetime="2017-01-03T10:32:15+08:00">2017-01-03</time>
+              <time title="创建时间：2018-11-20 22:50:46" itemprop="dateCreated datePublished" datetime="2018-11-20T22:50:46+08:00">2018-11-20</time>
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -417,8 +399,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/随笔/Yanx-First-Article/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/随笔/Yanx-First-Article/" itemprop="commentCount"></span>
+                <a href="/mixed/ES实现模糊搜索/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/mixed/ES实现模糊搜索/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -448,7 +430,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">16</span>
+                <span title="本文字数">14</span>
               
 
               
@@ -472,8 +454,9 @@
       
 
       
-        <p>哈哈哈哈 终于把博客建起来了！</p>
-
+        <hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><p>磁盘空间暴增</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>
       
     </div>
 
@@ -522,7 +505,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/myblog/" rel="tag"><i class="fa fa-tag"></i> myblog</a>
+            <a href="/tags/elasticsearch/" rel="tag"><i class="fa fa-tag"></i> elasticsearch</a>
+          
+            <a href="/tags/ngram/" rel="tag"><i class="fa fa-tag"></i> ngram</a>
+          
+            <a href="/tags/ES模糊搜索/" rel="tag"><i class="fa fa-tag"></i> ES模糊搜索</a>
           
         </div>
       
@@ -535,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/mixed/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/mixed/利用不可输入-不可见字符来实现字符转义功能/" rel="next" title="利用不可输入/不可见字符来实现字符转义功能">
+                <i class="fa fa-chevron-left"></i> 利用不可输入/不可见字符来实现字符转义功能
               </a>
             
           </div>
@@ -545,8 +532,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/随笔/begin/" rel="prev" title="Begin">
-                Begin <i class="fa fa-chevron-right"></i>
+              <a href="/mixed/Dream-Lover/" rel="prev" title="Dream Lover">
+                Dream Lover <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -595,8 +582,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -724,6 +720,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缺点"><span class="nav-number">2.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

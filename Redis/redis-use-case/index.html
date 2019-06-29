@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="哈哈哈哈 终于把博客建起来了！">
-<meta name="keywords" content="myblog">
+  <meta name="description" content="前言Redis在后端开发中经常被使用到，那么它一般都在哪些场景下派上用场呢？ 缓存这个是reids最最基本的功能，也是redis诞生的原因，关于缓存的设计用如下几种： 缓存后果 排行榜系统zset 有序队列 计数器应用HyperLogLog 从数学角度提供的一个占用极少内存来进行统计的数据结构，误差率在0.81%。特别适用于统计不需要太精准的 去重（这是跟在redis创建一个int慢慢自增的重大区">
+<meta name="keywords" content="redis,redis使用场景">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Yanx First Article">
-<meta property="og:url" content="https://yanxin.me/随笔/Yanx-First-Article/index.html">
+<meta property="og:title" content="Redis系列(一)：Redis使用场景">
+<meta property="og:url" content="https://yanxin.me/Redis/redis-use-case/index.html">
 <meta property="og:site_name" content="Yanx">
-<meta property="og:description" content="哈哈哈哈 终于把博客建起来了！">
+<meta property="og:description" content="前言Redis在后端开发中经常被使用到，那么它一般都在哪些场景下派上用场呢？ 缓存这个是reids最最基本的功能，也是redis诞生的原因，关于缓存的设计用如下几种： 缓存后果 排行榜系统zset 有序队列 计数器应用HyperLogLog 从数学角度提供的一个占用极少内存来进行统计的数据结构，误差率在0.81%。特别适用于统计不需要太精准的 去重（这是跟在redis创建一个int慢慢自增的重大区">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-01T18:39:12.485Z">
+<meta property="og:updated_time" content="2019-06-29T11:12:55.022Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yanx First Article">
-<meta name="twitter:description" content="哈哈哈哈 终于把博客建起来了！">
+<meta name="twitter:title" content="Redis系列(一)：Redis使用场景">
+<meta name="twitter:description" content="前言Redis在后端开发中经常被使用到，那么它一般都在哪些场景下派上用场呢？ 缓存这个是reids最最基本的功能，也是redis诞生的原因，关于缓存的设计用如下几种： 缓存后果 排行榜系统zset 有序队列 计数器应用HyperLogLog 从数学角度提供的一个占用极少内存来进行统计的数据结构，误差率在0.81%。特别适用于统计不需要太精准的 去重（这是跟在redis创建一个int慢慢自增的重大区">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://yanxin.me/随笔/Yanx-First-Article/"/>
+  <link rel="canonical" href="https://yanxin.me/Redis/redis-use-case/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>Yanx First Article | Yanx</title>
+  <title>Redis系列(一)：Redis使用场景 | Yanx</title>
   
 
 
@@ -342,7 +342,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yanxin.me/随笔/Yanx-First-Article/">
+    <link itemprop="mainEntityOfPage" href="https://yanxin.me/Redis/redis-use-case/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yanx">
@@ -359,7 +359,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Yanx First Article
+          <h2 class="post-title" itemprop="name headline">Redis系列(一)：Redis使用场景
               
             
           </h2>
@@ -384,7 +384,7 @@
                 
               
 
-              <time title="创建时间：2017-01-03 10:32:15" itemprop="dateCreated datePublished" datetime="2017-01-03T10:32:15+08:00">2017-01-03</time>
+              <time title="创建时间：2018-10-21 21:41:55" itemprop="dateCreated datePublished" datetime="2018-10-21T21:41:55+08:00">2018-10-21</time>
             
 
             
@@ -402,7 +402,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a></span>
 
                 
                 
@@ -417,8 +417,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/随笔/Yanx-First-Article/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/随笔/Yanx-First-Article/" itemprop="commentCount"></span>
+                <a href="/Redis/redis-use-case/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/Redis/redis-use-case/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -448,7 +448,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">16</span>
+                <span title="本文字数">1.1k</span>
               
 
               
@@ -472,8 +472,19 @@
       
 
       
-        <p>哈哈哈哈 终于把博客建起来了！</p>
-
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Redis在后端开发中经常被使用到，那么它一般都在哪些场景下派上用场呢？</p>
+<h1 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h1><p>这个是reids最最基本的功能，也是redis诞生的原因，关于缓存的设计用如下几种：</p>
+<p>缓存后果</p>
+<h1 id="排行榜系统"><a href="#排行榜系统" class="headerlink" title="排行榜系统"></a>排行榜系统</h1><p>zset 有序队列</p>
+<h1 id="计数器应用"><a href="#计数器应用" class="headerlink" title="计数器应用"></a>计数器应用</h1><p>HyperLogLog 从数学角度提供的一个占用极少内存来进行统计的数据结构，误差率在0.81%。特别适用于统计不需要太精准的 去重（这是跟在redis创建一个int慢慢自增的重大区别） 数据，例如当前网站在线总人数。</p>
+<h1 id="社交网络"><a href="#社交网络" class="headerlink" title="社交网络"></a>社交网络</h1><h1 id="消息队列系统"><a href="#消息队列系统" class="headerlink" title="消息队列系统"></a>消息队列系统</h1><p>redis的消息队列是非常简单的消息队列系统，满足一般的订阅发布功能，对于一些要求消息队列高性能高可用的场景，还是别考虑redis了，用kafka和rocketMQ挺好的。</p>
+<p>但是在Redis 5.0中推出了一个新的数据类型Stream Data 数据流，感觉redis还是往消息队列方向发展，不过仅仅只是推测，稍微了解就好。</p>
+<h1 id="分布式相关"><a href="#分布式相关" class="headerlink" title="分布式相关"></a>分布式相关</h1><h2 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h2><p><a href="https://www.cnblogs.com/linjiqin/p/8003838.html" target="_blank" rel="noopener">https://www.cnblogs.com/linjiqin/p/8003838.html</a></p>
+<p>加锁<br>setnx           设置变量，key 为 统一的某个lock_key,value为requestId 也就是标识这次请求是哪个线程加的锁，一般用UUID来生成 分布式唯一id，当变量存在时不设置（此时为锁被别人占用）<br>setex           设置过期时间，为的是防止线程占用锁后意外挂掉或超时加锁的情况，强制释放锁（不过这个时候是不是要考虑到 这个超时的线程 其实也是在进行某些操作的，而这个锁被释放让其他线程拿到了，那么怎么解决这样的情况呢，这样就会出现了多个线程进行某个操作，那只能是 每次操作都要获取一次 这个分布式锁才行，再或者就是 获取锁就会先去 终止掉其他线程，或者用一个方法 来规避这个资源还有其他东西在用）。 其实这个过期时间其实也挺难受的。</p>
+<p>解锁<br>getSet          获取lock_key 的value 来判断当前线程是否是 锁的持有者。<br>delKey          删除key</p>
+<p>以上 加锁 和 解锁其实都不是原子操作，都涉及两个命令。那么就会有问题：<br>加锁时：获取了锁，但是没设过期时间，那么这个锁有可能一直不释放，导致其他线程一直在等待。<br>解锁时：判断了A是当前锁的持有者，但是这个时候 key过期了，被另一个线程B获取到了锁，但是紧接着A del 释放了这个锁，那么B的锁就被A释放了。</p>
+<p>解决方案：加锁和解锁都用LUA脚本去执行，因为Redis对LUA脚本是原子操作。不能用管道去执行，管道虽然把多个命令合并起来顺序执行，但是不具有原子性：后一个命令执行失败了前一个命令不会回滚。</p>
+<h2 id="分布式session"><a href="#分布式session" class="headerlink" title="分布式session"></a>分布式session</h2><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>
       
     </div>
 
@@ -522,7 +533,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/myblog/" rel="tag"><i class="fa fa-tag"></i> myblog</a>
+            <a href="/tags/redis/" rel="tag"><i class="fa fa-tag"></i> redis</a>
+          
+            <a href="/tags/redis使用场景/" rel="tag"><i class="fa fa-tag"></i> redis使用场景</a>
           
         </div>
       
@@ -535,8 +548,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/mixed/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/Redis/redis-config/" rel="next" title="Redis系列(一)：Redis配置">
+                <i class="fa fa-chevron-left"></i> Redis系列(一)：Redis配置
               </a>
             
           </div>
@@ -545,8 +558,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/随笔/begin/" rel="prev" title="Begin">
-                Begin <i class="fa fa-chevron-right"></i>
+              <a href="/Redis/redis-hotkey/" rel="prev" title="Redis系列(一)：Redis热点key">
+                Redis系列(一)：Redis热点key <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -595,8 +608,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -724,6 +746,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缓存"><span class="nav-number">2.</span> <span class="nav-text">缓存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排行榜系统"><span class="nav-number">3.</span> <span class="nav-text">排行榜系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计数器应用"><span class="nav-number">4.</span> <span class="nav-text">计数器应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#社交网络"><span class="nav-number">5.</span> <span class="nav-text">社交网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#消息队列系统"><span class="nav-number">6.</span> <span class="nav-text">消息队列系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分布式相关"><span class="nav-number">7.</span> <span class="nav-text">分布式相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式锁"><span class="nav-number">7.1.</span> <span class="nav-text">分布式锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式session"><span class="nav-number">7.2.</span> <span class="nav-text">分布式session</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

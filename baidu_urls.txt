@@ -1,3 +1,10 @@
+https://yanxin.me/mixed/Dream-Lover/
+https://yanxin.me/mixed/ES实现模糊搜索/
+https://yanxin.me/mixed/利用不可输入-不可见字符来实现字符转义功能/
+https://yanxin.me/Redis/redis-hotkey/
+https://yanxin.me/Redis/redis-use-case/
+https://yanxin.me/Redis/redis-config/
+https://yanxin.me/Redis/redis-version/
 https://yanxin.me/随笔/begin/
 https://yanxin.me/随笔/Yanx-First-Article/
 https://yanxin.me/mixed/hello-world/

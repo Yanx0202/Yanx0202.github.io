@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="哈哈哈哈 终于把博客建起来了！">
-<meta name="keywords" content="myblog">
+  <meta name="description" content="前言hotkey三连：什么是hotkey，hotkey有什么用，找它干嘛 什么是hotkeyhotkey也就是热点key，是在一定时间段内被频繁访问的key。 hotkey有什么用hotkey其实没什么用，只是让你注意一下这样的热点key会带来的一些问题。既然这些key被经常访问，如果这些key使用不当就会对系统性能造成一定的影响。比如：   这个key的key字段太长 这个key的value字段">
+<meta name="keywords" content="redis,redis hotkey">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Yanx First Article">
-<meta property="og:url" content="https://yanxin.me/随笔/Yanx-First-Article/index.html">
+<meta property="og:title" content="Redis系列(一)：Redis热点key">
+<meta property="og:url" content="https://yanxin.me/Redis/redis-hotkey/index.html">
 <meta property="og:site_name" content="Yanx">
-<meta property="og:description" content="哈哈哈哈 终于把博客建起来了！">
+<meta property="og:description" content="前言hotkey三连：什么是hotkey，hotkey有什么用，找它干嘛 什么是hotkeyhotkey也就是热点key，是在一定时间段内被频繁访问的key。 hotkey有什么用hotkey其实没什么用，只是让你注意一下这样的热点key会带来的一些问题。既然这些key被经常访问，如果这些key使用不当就会对系统性能造成一定的影响。比如：   这个key的key字段太长 这个key的value字段">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-01T18:39:12.485Z">
+<meta property="og:updated_time" content="2019-06-29T11:13:23.331Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yanx First Article">
-<meta name="twitter:description" content="哈哈哈哈 终于把博客建起来了！">
+<meta name="twitter:title" content="Redis系列(一)：Redis热点key">
+<meta name="twitter:description" content="前言hotkey三连：什么是hotkey，hotkey有什么用，找它干嘛 什么是hotkeyhotkey也就是热点key，是在一定时间段内被频繁访问的key。 hotkey有什么用hotkey其实没什么用，只是让你注意一下这样的热点key会带来的一些问题。既然这些key被经常访问，如果这些key使用不当就会对系统性能造成一定的影响。比如：   这个key的key字段太长 这个key的value字段">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://yanxin.me/随笔/Yanx-First-Article/"/>
+  <link rel="canonical" href="https://yanxin.me/Redis/redis-hotkey/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>Yanx First Article | Yanx</title>
+  <title>Redis系列(一)：Redis热点key | Yanx</title>
   
 
 
@@ -342,7 +342,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yanxin.me/随笔/Yanx-First-Article/">
+    <link itemprop="mainEntityOfPage" href="https://yanxin.me/Redis/redis-hotkey/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yanx">
@@ -359,7 +359,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Yanx First Article
+          <h2 class="post-title" itemprop="name headline">Redis系列(一)：Redis热点key
               
             
           </h2>
@@ -384,7 +384,7 @@
                 
               
 
-              <time title="创建时间：2017-01-03 10:32:15" itemprop="dateCreated datePublished" datetime="2017-01-03T10:32:15+08:00">2017-01-03</time>
+              <time title="创建时间：2018-11-04 00:11:13" itemprop="dateCreated datePublished" datetime="2018-11-04T00:11:13+08:00">2018-11-04</time>
             
 
             
@@ -402,7 +402,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a></span>
 
                 
                 
@@ -417,8 +417,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/随笔/Yanx-First-Article/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/随笔/Yanx-First-Article/" itemprop="commentCount"></span>
+                <a href="/Redis/redis-hotkey/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/Redis/redis-hotkey/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -448,7 +448,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">16</span>
+                <span title="本文字数">1.7k</span>
               
 
               
@@ -472,8 +472,44 @@
       
 
       
-        <p>哈哈哈哈 终于把博客建起来了！</p>
-
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>hotkey三连：什么是hotkey，hotkey有什么用，找它干嘛</p>
+<h1 id="什么是hotkey"><a href="#什么是hotkey" class="headerlink" title="什么是hotkey"></a>什么是hotkey</h1><p>hotkey也就是热点key，是在一定时间段内被频繁访问的key。</p>
+<h1 id="hotkey有什么用"><a href="#hotkey有什么用" class="headerlink" title="hotkey有什么用"></a>hotkey有什么用</h1><p>hotkey其实没什么用，只是让你注意一下这样的热点key会带来的一些问题。<br>既然这些key被经常访问，如果这些key使用不当就会对系统性能造成一定的影响。比如： </p>
+<ol>
+<li>这个key的key字段太长</li>
+<li>这个key的value字段是一个序列化的字符串对象，但实际业务访问只需要这个字段其中某个值</li>
+</ol>
+<p>其实上边两个例子说的就是热点key会带来的网络带宽的问题，这个key访问次数过多对象又大，那么占用的带宽就会越大</p>
+<ol start="3">
+<li>这是在集群模式下</li>
+</ol>
+<p>这个例子就是有点偏激了，也就是如果一个redis集群中只访问一个key，并且是超高频的，那么会对集群中 分配了这个key的槽的 节点造成很大压力（或者说 一个集群给你玩成了一个 单点！）那自然也要进行处理。不然 你把一个节点搞蹦了 请求又转到其他节点，又给你搞蹦了形成雪崩效应，那还玩个蛋。<br>这种情况下可以考虑拆散这个key，比如这里边有二级数据结构，那么就可以考虑拆成2个key，这样redis集群就可能会把这两个可以分配到不同的节点上</p>
+<ol start="4">
+<li>热点key重建<br>一般存到redis的数据都会设置过期时间，如果某个热点key在某个时间过期了，并且这个key是需要经过很复杂的运算才能的出来的数据。那么就会在一定时间内 访问这个key失效，并触发 重建这个key的命令，在多线程下，这个key会被重建多次，有可能会让系统崩掉。</li>
+</ol>
+<p>这个可以通过创建 重建锁 来控制只能有一个线程来重建这个key，或者是定期的（在没过期前）调用一个线程来重建这个key，当有修改的主动通知修改这个key。<br>最暴力的就是永不过期。</p>
+<h1 id="怎么找到热点key呢"><a href="#怎么找到热点key呢" class="headerlink" title="怎么找到热点key呢"></a>怎么找到热点key呢</h1><ol>
+<li><p>修改redis客户端代码<br>直接在redis客户端的调用command 方法中统计每次执行命令的key，<br>这个成本太高，而且你很难要求连你redis的机器来 使用你这个修改过的客户端<br>但这个其实是最直接最有效的，并且还能把统计命令的计算压力交给客户端。<br>但是只能统计单个客户端的，需要定时从客户端把统计信息发到统计的服务端</p>
+</li>
+<li><p>在服务端代理统计<br>这个就是每个redis请求都要先走你的代理，然后再被你转发到相应的服务端中<br>其实这个成本也不小，主要是需要针对 代理端的高可用，</p>
+</li>
+<li><p>monitor监控redis的命令<br>这个就是会对redis造成很大的负担，会阻塞redis不说，还会把人家的输出缓冲区占满</p>
+</li>
+<li><p>在机器层面对网络数据包进行抓包分析<br>这个就对技术水平要求很高了</p>
+</li>
+<li><p>使用redis 4.0.3版<br>redis 4.0.3 的基于LFU热点发现机制。LFU – Least Frequently Used 意味最不经常使用，原本来4.0版本引入的时候 只是为了用来做内存逐出策略的，但是在4.0.3版本开始正式支持基于LFU的热点key发现机制。</p>
+</li>
+</ol>
+<p>&lt;%<br>typedef struct redisObject {<br>    unsigned type:4;<br>    unsigned encoding:4;<br>    unsigned lru:LRU_BITS; /* LRU time (relative to global lru_clock) or</p>
+<pre><code>                        * LFU data (least significant 8 bits frequency
+                        * and most significant 16 bits access time). */
+int refcount;
+void *ptr;
+</code></pre><p>} robj;<br>%&gt;</p>
+<p>首先 这个字段是在 redisObject中保存的，也就是我们需要先用scan遍历一遍所有key才能得到这些玩意。</p>
+<p>但是注意，这个count其实是</p>
+<p>redis-cli  –hotkey 也支持查询所有热点key</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>
       
     </div>
 
@@ -522,7 +558,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/myblog/" rel="tag"><i class="fa fa-tag"></i> myblog</a>
+            <a href="/tags/redis/" rel="tag"><i class="fa fa-tag"></i> redis</a>
+          
+            <a href="/tags/redis-hotkey/" rel="tag"><i class="fa fa-tag"></i> redis hotkey</a>
           
         </div>
       
@@ -535,8 +573,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/mixed/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/Redis/redis-use-case/" rel="next" title="Redis系列(一)：Redis使用场景">
+                <i class="fa fa-chevron-left"></i> Redis系列(一)：Redis使用场景
               </a>
             
           </div>
@@ -545,8 +583,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/随笔/begin/" rel="prev" title="Begin">
-                Begin <i class="fa fa-chevron-right"></i>
+              <a href="/mixed/利用不可输入-不可见字符来实现字符转义功能/" rel="prev" title="利用不可输入/不可见字符来实现字符转义功能">
+                利用不可输入/不可见字符来实现字符转义功能 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -595,8 +633,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -724,6 +771,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是hotkey"><span class="nav-number">2.</span> <span class="nav-text">什么是hotkey</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hotkey有什么用"><span class="nav-number">3.</span> <span class="nav-text">hotkey有什么用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎么找到热点key呢"><span class="nav-number">4.</span> <span class="nav-text">怎么找到热点key呢</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

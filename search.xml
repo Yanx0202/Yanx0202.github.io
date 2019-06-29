@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Dream Lover]]></title>
+    <url>%2Fmixed%2FDream-Lover%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[ES实现模糊搜索]]></title>
+    <url>%2Fmixed%2FES%E5%AE%9E%E7%8E%B0%E6%A8%A1%E7%B3%8A%E6%90%9C%E7%B4%A2%2F</url>
+    <content type="text"><![CDATA[前言缺点磁盘空间暴增 总结]]></content>
+      <tags>
+        <tag>elasticsearch</tag>
+        <tag>ngram</tag>
+        <tag>ES模糊搜索</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[利用不可输入/不可见字符来实现字符转义功能]]></title>
+    <url>%2Fmixed%2F%E5%88%A9%E7%94%A8%E4%B8%8D%E5%8F%AF%E8%BE%93%E5%85%A5-%E4%B8%8D%E5%8F%AF%E8%A7%81%E5%AD%97%E7%AC%A6%E6%9D%A5%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E8%BD%AC%E4%B9%89%E5%8A%9F%E8%83%BD%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Redis系列(一)：Redis热点key]]></title>
+    <url>%2FRedis%2Fredis-hotkey%2F</url>
+    <content type="text"><![CDATA[前言hotkey三连：什么是hotkey，hotkey有什么用，找它干嘛 什么是hotkeyhotkey也就是热点key，是在一定时间段内被频繁访问的key。 hotkey有什么用hotkey其实没什么用，只是让你注意一下这样的热点key会带来的一些问题。既然这些key被经常访问，如果这些key使用不当就会对系统性能造成一定的影响。比如： 这个key的key字段太长 这个key的value字段是一个序列化的字符串对象，但实际业务访问只需要这个字段其中某个值 其实上边两个例子说的就是热点key会带来的网络带宽的问题，这个key访问次数过多对象又大，那么占用的带宽就会越大 这是在集群模式下 这个例子就是有点偏激了，也就是如果一个redis集群中只访问一个key，并且是超高频的，那么会对集群中 分配了这个key的槽的 节点造成很大压力（或者说 一个集群给你玩成了一个 单点！）那自然也要进行处理。不然 你把一个节点搞蹦了 请求又转到其他节点，又给你搞蹦了形成雪崩效应，那还玩个蛋。这种情况下可以考虑拆散这个key，比如这里边有二级数据结构，那么就可以考虑拆成2个key，这样redis集群就可能会把这两个可以分配到不同的节点上 热点key重建一般存到redis的数据都会设置过期时间，如果某个热点key在某个时间过期了，并且这个key是需要经过很复杂的运算才能的出来的数据。那么就会在一定时间内 访问这个key失效，并触发 重建这个key的命令，在多线程下，这个key会被重建多次，有可能会让系统崩掉。 这个可以通过创建 重建锁 来控制只能有一个线程来重建这个key，或者是定期的（在没过期前）调用一个线程来重建这个key，当有修改的主动通知修改这个key。最暴力的就是永不过期。 怎么找到热点key呢 修改redis客户端代码直接在redis客户端的调用command 方法中统计每次执行命令的key，这个成本太高，而且你很难要求连你redis的机器来 使用你这个修改过的客户端但这个其实是最直接最有效的，并且还能把统计命令的计算压力交给客户端。但是只能统计单个客户端的，需要定时从客户端把统计信息发到统计的服务端 在服务端代理统计这个就是每个redis请求都要先走你的代理，然后再被你转发到相应的服务端中其实这个成本也不小，主要是需要针对 代理端的高可用， monitor监控redis的命令这个就是会对redis造成很大的负担，会阻塞redis不说，还会把人家的输出缓冲区占满 在机器层面对网络数据包进行抓包分析这个就对技术水平要求很高了 使用redis 4.0.3版redis 4.0.3 的基于LFU热点发现机制。LFU – Least Frequently Used 意味最不经常使用，原本来4.0版本引入的时候 只是为了用来做内存逐出策略的，但是在4.0.3版本开始正式支持基于LFU的热点key发现机制。 &lt;%typedef struct redisObject { unsigned type:4; unsigned encoding:4; unsigned lru:LRU_BITS; /* LRU time (relative to global lru_clock) or * LFU data (least significant 8 bits frequency * and most significant 16 bits access time). */ int refcount; void *ptr; } robj;%&gt; 首先 这个字段是在 redisObject中保存的，也就是我们需要先用scan遍历一遍所有key才能得到这些玩意。 但是注意，这个count其实是 redis-cli –hotkey 也支持查询所有热点key 总结]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+        <tag>redis hotkey</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Redis系列(一)：Redis使用场景]]></title>
+    <url>%2FRedis%2Fredis-use-case%2F</url>
+    <content type="text"><![CDATA[前言Redis在后端开发中经常被使用到，那么它一般都在哪些场景下派上用场呢？ 缓存这个是reids最最基本的功能，也是redis诞生的原因，关于缓存的设计用如下几种： 缓存后果 排行榜系统zset 有序队列 计数器应用HyperLogLog 从数学角度提供的一个占用极少内存来进行统计的数据结构，误差率在0.81%。特别适用于统计不需要太精准的 去重（这是跟在redis创建一个int慢慢自增的重大区别） 数据，例如当前网站在线总人数。 社交网络消息队列系统redis的消息队列是非常简单的消息队列系统，满足一般的订阅发布功能，对于一些要求消息队列高性能高可用的场景，还是别考虑redis了，用kafka和rocketMQ挺好的。 但是在Redis 5.0中推出了一个新的数据类型Stream Data 数据流，感觉redis还是往消息队列方向发展，不过仅仅只是推测，稍微了解就好。 分布式相关分布式锁https://www.cnblogs.com/linjiqin/p/8003838.html 加锁setnx 设置变量，key 为 统一的某个lock_key,value为requestId 也就是标识这次请求是哪个线程加的锁，一般用UUID来生成 分布式唯一id，当变量存在时不设置（此时为锁被别人占用）setex 设置过期时间，为的是防止线程占用锁后意外挂掉或超时加锁的情况，强制释放锁（不过这个时候是不是要考虑到 这个超时的线程 其实也是在进行某些操作的，而这个锁被释放让其他线程拿到了，那么怎么解决这样的情况呢，这样就会出现了多个线程进行某个操作，那只能是 每次操作都要获取一次 这个分布式锁才行，再或者就是 获取锁就会先去 终止掉其他线程，或者用一个方法 来规避这个资源还有其他东西在用）。 其实这个过期时间其实也挺难受的。 解锁getSet 获取lock_key 的value 来判断当前线程是否是 锁的持有者。delKey 删除key 以上 加锁 和 解锁其实都不是原子操作，都涉及两个命令。那么就会有问题：加锁时：获取了锁，但是没设过期时间，那么这个锁有可能一直不释放，导致其他线程一直在等待。解锁时：判断了A是当前锁的持有者，但是这个时候 key过期了，被另一个线程B获取到了锁，但是紧接着A del 释放了这个锁，那么B的锁就被A释放了。 解决方案：加锁和解锁都用LUA脚本去执行，因为Redis对LUA脚本是原子操作。不能用管道去执行，管道虽然把多个命令合并起来顺序执行，但是不具有原子性：后一个命令执行失败了前一个命令不会回滚。 分布式session总结]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+        <tag>redis使用场景</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Redis系列(一)：Redis配置]]></title>
+    <url>%2FRedis%2Fredis-config%2F</url>
+    <content type="text"><![CDATA[前言安装后需要设置的配置bind 绑定 网卡 地址bind 绑定的是网卡地址，如果一个电脑有两个网卡，且redis只绑定了一个，那么就有几率访问不到redisport 端口daemonize 是否守护线程运行protected-mode 开启保护模式这个配置会在没有bind IP以及没有设置密码的时候，默认只能通过127.0.0.1 本机访问redis，禁止公网访问 内存相关maxmemory 最大内存容量，默认为0（不限制），达到该容量则只允许读不允许写maxmemory-policy 当内存不够时删除键的策略volatile-lru 以lru算法删除设置过过期时间的keyallkeys-lru 以lru算法删除设置过过期时间的keyvolatile-randomallkeys-randomvolatile-ttlnoeviction（默认） 不删除以上策略可以总结下：volatile和allkeys是删除的范围volatile是针对设置过过期时间的key，适用于redis中有部分key不允许删除的场景（也就是不设置过期时间的key）。allkeys就是所有key，适用于redis中所有的数据都可任意删除的场景。后边的单词是删除算法：lru则是lru算法删除，适用于不同key的访问热度相差较大的场景random是随机删除，适用于不同key之间访问的热度相似的场景ttl是删除快过期的数据，适合所有key都设有过期时间的场景 maxmemory-samples 采样的LRU个数因为redis 的主动扫描LRU算法，不会每次都扫描全部，而是只扫描一部分key，当着这部分key超过多少比例达到过期时间，他就会把所用key都扫描一遍来清空过期键 备份相关配置appendonly 开启AOF备份，默认为关闭appendfsync AOF同步的频率，默认为everysec也可以选择always每条命令都同步auto-aof-rewrite-min-size 触发rewrite的AOF文件最小阈值，rewrite是对AOF文件的重写，防止AOF文件过大auto-aof-rewrite-percentage 触发rewrite的AOF文件的增长比例 save RDB保存条件默认配置：save 900 1save 300 10save 60 10000也就是分时间段，从时间最短的开始，60秒内如果有10000次更新数据操作就执行一次save备份，如果300秒内有10次更新数据操作就save，同理900秒有一次更新 rdbcompression RDB文件是否压缩（默认启用采用LZF算法压缩）rdb文件是以二进制格式来保存。可以采用一定的压缩算法来极大减少磁盘的占用，但是相对的执行压缩算法以及解压缩会增加cpu压力 数据结构配置这些配置都是对redis中不同数据类型在不同数据量下的自动向上转变数据格式的配置，转变的目的一般都是牺牲性能来换取内存空间。hash-max-ziplist-entrieshash-max-ziplist-valuelist-max-ziplist-entrieslist-max-ziplist-valueset-max-intset-entrieszset-max-ziplist-entrieszset-max-ziplist-valuehll-sqarse-max-bytes 复制相关slaveof 指定当前节点复制哪个主节点repl-ping-slave-period 主节点定期向从节点发送ping命令的周期，用来判断从节点是否存活repl-timeout 主从结点复制超时repl-backlog-size 复制积压缓存区大小，该区域主要是用来处理主从增量复制的，超时后会把新的数据写入这个区域内，直到从节点重新恢复连接，就会把这个缓冲区的数据写到从节点中。但是如果恢复连接后，从节点的offset不在这个缓冲区中，也就是断线这段时间主节点新增了太多数据超出了缓冲区的范围，那么就会触发全量复制，这个一定要避免，不然会对redis性能造成影响 slave-read-only 从节点是否开启只读，也就是主从结构的读写分离。但这个架构会使得系统架构变得异常复杂，主要出现在某个从节点坏掉上，不能自动故障转移等等 客户端相关配置maxclients 最大客户端连接数这个是一般数据库都会配置来限制过多的客户端连接，简单来说数据库维护这些链接需要一定内存等资源的开销，所以不可能无限制的给你连接timeout 客户端超时时间，设置理由主要是很多客户端用完数据库后不会主动释放链接，那只能通过数据库来给你超时断掉。 总结以上都是redis主要功能的配置文件，理解redis的运行机制，再来看这些配置，你会发现这些配置每一个都设置的比较合理，也能进一步理解redis。 参考文献redis 开发与运维]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+        <tag>redis配置文件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Redis系列(一)：Redis版本]]></title>
+    <url>%2FRedis%2Fredis-version%2F</url>
+    <content type="text"><![CDATA[前言本篇主要是介绍Redis在发展过程中几个比较大的版本更新，以及只会提及其中比较大的改变，并不会去关注版本的小bug的修复或者某个功能的优化（毕竟官方有时候也就是说他们优化了xxx但是没说具体怎么优化）。 重要版本Redis 2.6Lua脚本支持 Redis 2.8引入稳定的哨兵模式主从结构支持增量同步 Redis 3.0引入稳定的集群模式 Redis 3.2新增GEO地理位置数据类型新的List编码类型：quicklist Redis 4.0新增模块系统新增缓存剔除算法LFU（Last Frequently Used）新增非阻塞的del和flushall/flushdb，有效解决删除bigkey可能造成的阻塞新增RDB-AOF模式 Redis 5.0新增Stram数据类型新的有序集命令：ZPOPMIN / MAX和阻塞变体 #参考文献https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTEShttp://gad.qq.com/article/detail/29299]]></content>
+      <categories>
+        <category>Redis</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+        <tag>redis版本</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Begin]]></title>
     <url>%2F%E9%9A%8F%E7%AC%94%2Fbegin%2F</url>
     <content type="text"><![CDATA[前言其实这个Hexo框架的个人博客我在17年1月的时候就已经搭建好挂在Github Pages上了，当时的域名还是 yanx0202.github.io ，仍旧记得我当时是通了个宵才把这个博客搭建好的，通宵的原因只是我当时找了个错误的教程来操作（真的好气），实际搭建过程如果熟练的话最多5分钟就搞定了，之后我立马就把这个博客完全忘掉了。 半个月前，无意中了解到同事Miaia正在使用Hexo搭建个人博客，并且他博客的内容就是针对如何搭建并优化Hexo个人博客。这突然就让我想起:我其实也有一个想好好写点文章的博客，但一直都没去更新它，那个时候还是大三现在都已经毕业三个月了，感叹时间过得很快的同时也希望能重新把这个博客捡回来。回去就立马把 yanxin.me 这个域名买了下来，（想众筹买 yan.xin 了解价格 ）并且开始抽时间对我原来的博客进行一些优化。 我的博客我对写这个博客的想法比较简单，能坚持写下去，不管是写一些读书笔记也好、网上烂大街同质的教程也好，能保持一个持续的输出那就达到基本目标了。其次我也不希望我的博客都是从别人那边复制粘贴过来，然后在文章的末尾加上一句转自xxxx就完事了的那种，所以在学习别人文章的基础上希望能尽量加上自己的一些想法，亦或者是针对他人文章中某个点进行更深入的探索等。当然理想是美好的，但是这种事没点技术积累也不是那么容易就能写的出来的，所以在初始阶段还是以把别人的文章通过自己的话转述出来为目标，保持一个写博客的习惯，达到这样的程度那我就算比较满意了。 致谢最后还是要特别感谢Miaia同学的教程让我把博客优化了好几个档次，什么国内外站点独立部署、Google和百度的SEO搜索优化、评论系统、打赏系统 都是在他的帮助下才完成的。想要搭建博客的同学可以去他的博客地址学习：Miaia Begin那就从祖国母亲生日这天开始吧。]]></content>
